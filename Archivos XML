@@ -1,0 +1,21 @@
+from xml.etree.ElementTree import Element, SubElement, tostring, parse
+
+# Crear un archivo XML con múltiples niveles
+raiz = Element('Libreria')
+libro1 = SubElement(raiz, 'Libro', {'ID': '1'})
+titulo1 = SubElement(libro1, 'Titulo')
+titulo1.text = 'Aprende Python'
+
+libro2 = SubElement(raiz, 'Libro', {'ID': '2'})
+titulo2 = SubElement(libro2, 'Titulo')
+titulo2.text = 'Master en Data Science'
+
+# Escribir el archivo XML
+with open('biblioteca.xml', 'wb') as archivo:
+    archivo.write(tostring(raiz))
+
+# Leer y listar títulos
+tree = parse('biblioteca.xml')
+root = tree.getroot()
+for libro in root.findall('Libro'):
+    print(libro.find('Titulo').text)

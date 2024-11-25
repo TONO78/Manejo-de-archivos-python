@@ -1,0 +1,11 @@
+import json
+
+# Serializar un objeto Python a JSON
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+persona = Persona('Lucía', 30)
+json_str = json.dumps(persona.__dict__)
+print(json_str)

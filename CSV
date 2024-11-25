@@ -1,0 +1,4 @@
+# Leer un archivo CSV grande usando pandas
+import pandas as pd
+df = pd.read_csv('datos.csv')
+print(df.head())

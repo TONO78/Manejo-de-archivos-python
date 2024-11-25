@@ -1,0 +1,9 @@
+import os
+
+# Crear una carpeta con subdirectorios
+os.makedirs('proyecto/datos', exist_ok=True)
+print("Carpeta creada exitosamente.")
+
+# Listar contenido de una carpeta
+contenido = os.listdir('proyecto')
+print(f"Contenido de la carpeta 'proyecto': {contenido}")

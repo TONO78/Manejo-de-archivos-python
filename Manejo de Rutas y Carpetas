@@ -1,0 +1,13 @@
+import os
+from pathlib import Path
+
+# Crear carpeta con os
+os.makedirs('mi_carpeta', exist_ok=True)
+
+# Crear carpeta con pathlib
+Path('mi_carpeta_pathlib').mkdir(parents=True, exist_ok=True)
+
+# Crear un archivo dentro de la carpeta
+ruta = Path('mi_carpeta_pathlib/archivo.txt')
+with open(ruta, 'w') as archivo:
+    archivo.write("Contenido dentro de la carpeta.")

@@ -1,0 +1,14 @@
+# Crear archivo binario
+data = b'\x00\x01\x02\x03'
+with open('archivo.bin', 'wb') as archivo:
+    archivo.write(data)
+
+# Leer archivo binario
+with open('archivo.bin', 'rb') as archivo:
+    contenido = archivo.read()
+    print(contenido)
+# Copiar el contenido de un archivo binario
+with open('imagen_original.png', 'rb') as archivo_entrada:
+    with open('imagen_copia.png', 'wb') as archivo_salida:
+        while chunk := archivo_entrada.read(1024):  # Leer en bloques de 1024 bytes
+            archivo_salida.write(chunk)

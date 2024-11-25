@@ -1,0 +1,15 @@
+from pathlib import Path
+
+BASE_DIR = Path('mi_proyecto')
+carpetas = [
+    BASE_DIR / 'datos/entradas',
+    BASE_DIR / 'datos/salidas',
+    BASE_DIR / 'scripts',
+    BASE_DIR / 'resultados/graficas',
+    BASE_DIR / 'resultados/reportes',
+]
+
+for carpeta in carpetas:
+    carpeta.mkdir(parents=True, exist_ok=True)
+
+print(f"Estructura del proyecto creada en: {BASE_DIR.resolve()}")

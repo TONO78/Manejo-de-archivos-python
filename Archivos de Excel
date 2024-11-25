@@ -1,0 +1,16 @@
+import openpyxl
+from openpyxl.styles import Font, Alignment
+
+libro = openpyxl.Workbook()
+hoja = libro.active
+hoja.append(["Nombre", "Edad", "Calificación"])
+
+# Aplicar estilo a las celdas
+encabezado = ['Nombre', 'Edad', 'Calificación']
+for col, valor in enumerate(encabezado, 1):
+    celda = hoja.cell(row=1, column=col, value=valor)
+    celda.font = Font(bold=True)
+    celda.alignment = Alignment(horizontal="center")
+
+# Guardar archivo Excel
+libro.save('datos_estilizados.xlsx')

@@ -1,0 +1,7 @@
+import shutil
+
+# Comprimir una carpeta entera
+shutil.make_archive('carpeta_comprimida', 'zip', 'mi_carpeta')
+
+# Descomprimir
+shutil.unpack_archive('carpeta_comprimida.zip', 'carpeta_extraida')

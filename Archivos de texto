@@ -1,0 +1,18 @@
+# Crear un archivo de texto con múltiples líneas
+lineas = ["Primera línea\n", "Segunda línea\n", "Tercera línea\n"]
+with open('archivo.txt', 'w') as archivo:
+    archivo.writelines(lineas)
+
+# Leer línea por línea
+with open('archivo.txt', 'r') as archivo:
+    for linea in archivo:
+        print(f"Línea leída: {linea.strip()}")
+
+# Modificar una línea específica (lectura + escritura)
+with open('archivo.txt', 'r') as archivo:
+    contenido = archivo.readlines()
+
+contenido[1] = "Esta es una línea modificada\n"
+
+with open('archivo.txt', 'w') as archivo:
+    archivo.writelines(contenido)

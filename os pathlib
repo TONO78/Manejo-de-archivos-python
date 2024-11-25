@@ -1,0 +1,19 @@
+from pathlib import Path
+
+# Crear una ruta
+ruta = Path("nueva_carpeta/subcarpeta/archivo.txt")
+
+# Verificar si el archivo existe
+print(f"¿Existe el archivo? {ruta.exists()}")
+
+# Obtener información de la ruta
+print(f"Nombre del archivo: {ruta.name}")
+print(f"Extensión: {ruta.suffix}")
+print(f"Ruta padre: {ruta.parent}")
+
+# Crear carpetas hasta el archivo (sin crearlo aún)
+ruta.parent.mkdir(parents=True, exist_ok=True)
+
+# Escribir contenido en el archivo
+ruta.write_text("Este es un archivo creado en una ruta específica.")
+print(f"Contenido del archivo: {ruta.read_text()}")
