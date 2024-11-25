@@ -1,0 +1,11 @@
+from pathlib import Path
+
+# Crear una estructura de carpetas
+carpeta = Path("organizacion/proyecto/documentos")
+carpeta.mkdir(parents=True, exist_ok=True)
+print(f"Carpeta creada: {carpeta}")
+
+# Crear archivos dentro de la carpeta
+archivo = carpeta / "reporte.txt"
+archivo.write_text("Este es un archivo dentro de la carpeta creada.")
+print(f"Archivo creado: {archivo}")
